@@ -19,5 +19,7 @@ ENV PATH="/home/appuser/.local/bin:${PATH}"
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && rm get-pip.py
 
+RUN git clone https://github.com/sohaibwaheedgithub/CIHP_PGN.git HPP_Repo
 
-
+WORKDIR /home/appuser/HPP_Repo
+CMD python3 temp.py
