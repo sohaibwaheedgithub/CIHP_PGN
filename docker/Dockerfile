@@ -23,4 +23,6 @@ ARG CLONE_REPO=""
 RUN if [ "${CLONE_REPO}" = "clone" ]; then git clone https://github.com/sohaibwaheedgithub/CIHP_PGN.git HPP_Repo; fi
 
 WORKDIR /home/appuser/HPP_Repo
+
+RUN pip install -r requirement.txt
 CMD python3 evaluate_parsing_JPPNet-s2.py
