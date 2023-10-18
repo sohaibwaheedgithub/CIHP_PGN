@@ -19,7 +19,8 @@ ENV PATH="/home/appuser/.local/bin:${PATH}"
 
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && rm get-pip.py
 
-RUN git clone https://github.com/sohaibwaheedgithub/CIHP_PGN.git HPP_Repo
+ARG CLONE_REPO=""
+RUN if [ "${CLONE_REPO}" = "clone" ]; then git clone https://github.com/sohaibwaheedgithub/CIHP_PGN.git HPP_Repo; fi
 
 WORKDIR /home/appuser/HPP_Repo
-CMD python3 temp.py
+CMD python3 evaluate_parsing_JPPNet-s2.py
